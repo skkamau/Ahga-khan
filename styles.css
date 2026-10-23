@@ -168,6 +168,12 @@ th, td {
     border-bottom: 1px solid #d5d9d0;
 }
 
+caption {
+    padding: 0 0 14px;
+    color: #59665f;
+    text-align: left;
+}
+
 thead {
     background: #e5e8df;
 }
