@@ -130,4 +130,7 @@ function clearResult() {
 }
 
 form.addEventListener("submit", generateName);
-form.addEventListener("reset", clearResult);
+form.addEventListener("reset", function () {
+    clearResult();
+    document.getElementById("day").focus();
+});
