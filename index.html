@@ -9,6 +9,7 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#akan-form">Skip to the name generator</a>
     <main>
         <header>
             <p class="eyebrow">A NAME FOR YOUR DAY</p>
@@ -21,7 +22,7 @@
             <h2 id="form-title">When were you born?</h2>
             <p class="hint">Enter your birthday and choose a gender to find your name.</p>
             <noscript><p>Please enable JavaScript in your browser to generate your Akan name.</p></noscript>
-            <form id="akan-form" novalidate>
+            <form id="akan-form" tabindex="-1" novalidate>
                 <div class="date-fields">
                     <div>
                         <label for="day">Day</label>
