@@ -1,4 +1,3 @@
-// All three arrays use the same order: Sunday (0) to Saturday (6).
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
@@ -8,7 +7,6 @@ const months = ["January", "February", "March", "April", "May", "June",
 const form = document.getElementById("akan-form");
 const result = document.getElementById("result");
 
-// Leap years have 29 days in February.
 function isLeapYear(year) {
     return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
 }
@@ -31,7 +29,6 @@ function isValidDate(day, month, year) {
     return day <= daysInMonth[month - 1];
 }
 
-// Gregorian Zeller formula: January and February belong to the previous year.
 function calculateDay(day, month, year) {
     if (month < 3) {
         month = month + 12;
@@ -43,8 +40,6 @@ function calculateDay(day, month, year) {
     const total = day + Math.floor(13 * (month + 1) / 5) + yearPart
         + Math.floor(yearPart / 4) + Math.floor(century / 4) - 2 * century;
 
-    // Zeller starts at Saturday. Add 6 to make Sunday index 0.
-    // Adding 7 after the remainder also handles negative totals.
     return ((total + 6) % 7 + 7) % 7;
 }
 
@@ -63,7 +58,7 @@ function showError(message) {
 }
 
 function generateName(event) {
-    event.preventDefault(); // Keep the page open when submitting the form.
+    event.preventDefault();
     result.innerHTML = "<p>Your name will appear here.</p>";
     result.classList.remove("error");
 
