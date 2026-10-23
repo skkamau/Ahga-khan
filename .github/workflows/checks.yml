@@ -1,0 +1,22 @@
+name: JavaScript checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Check JavaScript syntax
+        run: node --check script.js
+      - name: Test dates and form behavior
+        run: node tests/script.test.js
