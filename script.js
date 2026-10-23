@@ -2,6 +2,8 @@
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+const months = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
 
 const form = document.getElementById("akan-form");
 const result = document.getElementById("result");
@@ -121,7 +123,7 @@ function generateName(event) {
 
     result.innerHTML = "<p>You were born on a " + days[dayIndex] + ". Your Akan name is</p>"
         + "<h3>" + akanName + "</h3>"
-        + "<p>Birthday: " + day + "/" + month + "/" + year + "</p>";
+        + "<p>Birthday: " + day + " " + months[month - 1] + " " + year + "</p>";
 }
 
 function clearResult() {
