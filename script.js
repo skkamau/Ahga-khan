@@ -54,9 +54,16 @@ function isFutureDate(day, month, year) {
     return birthday > currentDate;
 }
 
+function showError(message) {
+    result.textContent = message;
+    result.classList.add("error");
+    alert(message);
+}
+
 function generateName(event) {
     event.preventDefault(); // Keep the page open when submitting the form.
     result.innerHTML = "<p>Your name will appear here.</p>";
+    result.classList.remove("error");
 
     const dayInput = document.getElementById("day");
     const monthInput = document.getElementById("month");
@@ -64,7 +71,7 @@ function generateName(event) {
     const gender = document.querySelector('input[name="gender"]:checked');
 
     if (dayInput.value === "" || monthInput.value === "" || yearInput.value === "") {
-        alert("Please enter your day, month and year of birth.");
+        showError("Please enter your day, month and year of birth.");
         if (dayInput.value === "") {
             dayInput.focus();
         } else if (monthInput.value === "") {
@@ -80,18 +87,18 @@ function generateName(event) {
     const year = Number(yearInput.value);
 
     if (!isValidDate(day, month, year)) {
-        alert("Please enter a valid date: day 1–31, month 1–12 and year 1–9999. Check the days in your month.");
+        showError("Please enter a valid date: day 1–31, month 1–12 and year 1–9999. Check the days in your month.");
         return;
     }
 
     if (isFutureDate(day, month, year)) {
-        alert("Your birthday cannot be in the future.");
+        showError("Your birthday cannot be in the future.");
         yearInput.focus();
         return;
     }
 
     if (gender === null) {
-        alert("Please select your gender.");
+        showError("Please select your gender.");
         document.querySelector('input[name="gender"]').focus();
         return;
     }
@@ -112,6 +119,7 @@ function generateName(event) {
 
 function clearResult() {
     result.innerHTML = "<p>Your name will appear here.</p>";
+    result.classList.remove("error");
 }
 
 form.addEventListener("submit", generateName);
