@@ -100,8 +100,16 @@ fieldset {
 
 .gender-option {
     display: inline-block;
-    margin: 10px 22px 0 0;
+    margin: 10px 10px 0 0;
+    padding: 10px 12px;
+    min-height: 44px;
+    border: 1px solid #9eada3;
+    border-radius: 7px;
     cursor: pointer;
+}
+
+.gender-option:hover, .gender-option:focus-within {
+    background: #edf3ed;
 }
 
 input[type="radio"] {
