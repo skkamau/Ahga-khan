@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find your Akan name from your birthday and gender.">
+    <title>Akan Name Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <header>
+            <p class="eyebrow">A NAME FOR YOUR DAY</p>
+            <h1>Akan Name Generator</h1>
+            <p>Find your Akan name using your birthday. In Ghanaian Akan culture,
+                children can receive a name based on the day they were born.</p>
+        </header>
+
+        <section class="card" aria-labelledby="form-title">
+            <h2 id="form-title">When were you born?</h2>
+            <p class="hint">Enter your birthday and choose a gender to find your name.</p>
+            <noscript><p>Please enable JavaScript in your browser to generate your Akan name.</p></noscript>
+            <form id="akan-form" novalidate>
+                <div class="date-fields">
+                    <div>
+                        <label for="day">Day</label>
+                        <input type="number" id="day" name="day" autocomplete="bday-day" min="1" max="31" placeholder="DD" required>
+                    </div>
+                    <div>
+                        <label for="month">Month</label>
+                        <input type="number" id="month" name="month" autocomplete="bday-month" min="1" max="12" placeholder="MM" required>
+                    </div>
+                    <div>
+                        <label for="year">Year</label>
+                        <input type="number" id="year" name="year" autocomplete="bday-year" min="1" max="9999" placeholder="YYYY" required>
+                    </div>
+                </div>
+
+                <fieldset>
+                    <legend>Gender</legend>
+                    <label class="gender-option"><input type="radio" name="gender" value="male" required> Male</label>
+                    <label class="gender-option"><input type="radio" name="gender" value="female"> Female</label>
+                </fieldset>
+
+                <div class="buttons">
+                    <button type="submit">Find my Akan name</button>
+                    <button type="reset" class="secondary">Clear</button>
+                </div>
+            </form>
+
+            <section id="result" class="result" aria-live="polite" aria-atomic="true">
+                <p>Your name will appear here.</p>
+            </section>
+        </section>
+
+        <section class="names-guide" aria-labelledby="guide-title">
+            <h2 id="guide-title">Akan names by day</h2>
+            <p class="hint">Each day has a male and a female name.</p>
+            <table>
+                <thead><tr><th scope="col">Day</th><th scope="col">Male</th><th scope="col">Female</th></tr></thead>
+                <tbody>
+                    <tr><th scope="row">Sunday</th><td>Kwasi</td><td>Akosua</td></tr>
+                    <tr><th scope="row">Monday</th><td>Kwadwo</td><td>Adwoa</td></tr>
+                    <tr><th scope="row">Tuesday</th><td>Kwabena</td><td>Abenaa</td></tr>
+                    <tr><th scope="row">Wednesday</th><td>Kwaku</td><td>Akua</td></tr>
+                    <tr><th scope="row">Thursday</th><td>Yaw</td><td>Yaa</td></tr>
+                    <tr><th scope="row">Friday</th><td>Kofi</td><td>Afua</td></tr>
+                    <tr><th scope="row">Saturday</th><td>Kwame</td><td>Ama</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <footer>Made by Samuel Kamau &middot; HTML, CSS &amp; JavaScript</footer>
+    </main>
+</body>
+</html>

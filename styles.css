@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f1e9;
+    color: #243c32;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    border-top: 8px solid #bd702e;
+}
+
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.eyebrow {
+    color: #8e4c1a;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    line-height: 1.15;
+    margin: 12px 0 20px;
+}
+
+h2 {
+    font-size: 23px;
+    margin: 0 0 8px;
+}
+
+.card {
+    padding: 30px;
+    background: white;
+    border: 1px solid #d8dfd8;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px #243c3210;
+}
+
+.hint {
+    margin: 0 0 22px;
+    color: #59665f;
+    font-size: 14px;
+}
+
+.date-fields {
+    display: flex;
+    gap: 14px;
+}
+
+.date-fields div {
+    flex: 1;
+    min-width: 0;
+}
+
+label, legend {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="number"] {
+    width: 100%;
+    margin-top: 7px;
+    padding: 12px;
+    border: 1px solid #9eada3;
+    border-radius: 7px;
+    font: inherit;
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 22px 0;
+}
+
+.gender-option {
+    display: inline-block;
+    margin: 10px 22px 0 0;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    accent-color: #28563e;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 13px 20px;
+    background: #28563e;
+    color: white;
+    border: 1px solid #28563e;
+    border-radius: 7px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #193d2a;
+}
+
+.secondary {
+    background: white;
+    color: #28563e;
+}
+
+.secondary:hover {
+    background: #edf3ed;
+}
+
+input:focus-visible, button:focus-visible {
+    outline: 3px solid #bd702e;
+    outline-offset: 3px;
+}
+
+.result {
+    background: #edf3ed;
+    border-left: 4px solid #bd702e;
+    padding: 18px;
+    margin-top: 25px;
+    border-radius: 6px;
+}
+
+.result p {
+    margin: 0;
+}
+
+.result h3 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    margin: 5px 0;
+}
+
+.names-guide {
+    margin-top: 35px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #d5d9d0;
+}
+
+thead {
+    background: #e5e8df;
+}
+
+footer {
+    margin-top: 30px;
+    color: #59665f;
+    font-size: 12px;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    main { padding: 25px 14px; }
+    h1 { font-size: 34px; }
+    .card { padding: 20px; }
+    .date-fields { gap: 8px; }
+    input[type="number"] { padding: 10px 6px; }
+    .buttons { flex-direction: column; }
+}
