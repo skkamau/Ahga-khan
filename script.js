@@ -88,6 +88,13 @@ function generateName(event) {
 
     if (!isValidDate(day, month, year)) {
         showError("Please enter a valid date: day 1–31, month 1–12 and year 1–9999. Check the days in your month.");
+        if (!Number.isInteger(year) || year < 1 || year > 9999) {
+            yearInput.focus();
+        } else if (!Number.isInteger(month) || month < 1 || month > 12) {
+            monthInput.focus();
+        } else {
+            dayInput.focus();
+        }
         return;
     }
 
