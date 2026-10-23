@@ -46,6 +46,14 @@ function calculateDay(day, month, year) {
     return ((total + 6) % 7 + 7) % 7;
 }
 
+function isFutureDate(day, month, year) {
+    const today = new Date();
+    const birthday = year * 10000 + month * 100 + day;
+    const currentDate = today.getFullYear() * 10000
+        + (today.getMonth() + 1) * 100 + today.getDate();
+    return birthday > currentDate;
+}
+
 function generateName(event) {
     event.preventDefault(); // Keep the page open when submitting the form.
     result.innerHTML = "<p>Your name will appear here.</p>";
@@ -73,6 +81,12 @@ function generateName(event) {
 
     if (!isValidDate(day, month, year)) {
         alert("Please enter a valid date: day 1–31, month 1–12 and year 1–9999. Check the days in your month.");
+        return;
+    }
+
+    if (isFutureDate(day, month, year)) {
+        alert("Your birthday cannot be in the future.");
+        yearInput.focus();
         return;
     }
 
