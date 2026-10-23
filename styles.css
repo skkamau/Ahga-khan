@@ -207,3 +207,29 @@ footer {
     input[type="number"] { padding: 10px 6px; }
     .buttons { flex-direction: column; }
 }
+
+@media print {
+    body {
+        background: white;
+        color: black;
+        border: 0;
+    }
+
+    main {
+        max-width: none;
+        padding: 0;
+    }
+
+    form, .skip-link, .card > .hint, noscript {
+        display: none;
+    }
+
+    .card {
+        box-shadow: none;
+        padding: 16px;
+    }
+
+    .result, tr {
+        break-inside: avoid;
+    }
+}
